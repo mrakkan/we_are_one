@@ -94,7 +94,7 @@ void sendToMQTT() {
   float voltage = sensorValue * (5.0 / 1023.0); // แปลงค่า Analog เป็น Voltage
   float temperatureC = voltage * 100;
   // int potValue = analogRead(potPin);
-  String val_str = String(temparatureC);
+  String val_str = String(temperatureC);
 
   // Convert the string to a char array for MQTT publishing
   char messageBuffer[10];
