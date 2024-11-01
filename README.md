@@ -20,4 +20,4 @@ This repo for i love bit group only. others get out
 ![alt text](https://github.com/mrakkan/we_are_one/blob/main/img/MQTT-LED.png "Logo Title Text 1")
 
 # keypad
-คือรีบมาก ไปโฟลเด้อ noeysod fak/img จะเจอรูป keypad + ใน noeysod fak มีโค้ด keypad จากคุณ kxxn เอาไปเถอะช่วย ๆ กัน
+![alt text](https://github.com/mrakkan/we_are_one/blob/main/noeysod%20fak/img%20from%20noeysod/KEYPAD.png "Logo Title Text 1")
