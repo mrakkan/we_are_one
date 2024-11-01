@@ -1,5 +1,12 @@
 # we_are_one
 This repo for i love bit group only. others get out
+------------------------------------------------
+
+# รวมลิงก์ Git ในเครือ we are one
+
+## ซีเจ - https://github.com/66070248cj/PC/tree/main/arduinoLAB
+
+
 
 ------------------------------------------------
 
