@@ -21,3 +21,7 @@ This repo for i love bit group only. others get out
 
 # keypad
 ![alt text](https://github.com/mrakkan/we_are_one/blob/main/noeysod%20fak/img%20from%20noeysod/KEYPAD.png "Logo Title Text 1")
+
+#3switch
+
+![alt text](https://github.com/mrakkan/we_are_one/blob/main/img/3switch.png "Logo Title Text 1")
