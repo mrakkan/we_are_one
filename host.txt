@@ -1,0 +1,3 @@
+phycom.it.kmitl.ac.th (Web Port: 8884, Arduino Port: 1883)
+mqtt-dashboard.com (Web Port: 8884, Arduino Port: 1883)
+test.mosquitto.org (Web Port: 8081, Arduino Port: 1883)
