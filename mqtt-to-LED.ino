@@ -6,7 +6,9 @@
 
 #include <WiFiS3.h>
 #include <MQTTClient.h>
-
+const int RED_PIN = 2;    // ขา Red
+const int GREEN_PIN = 4;  // ขา Green
+const int BLUE_PIN = 7; // blue
 const int potPin = A0;
 const char WIFI_SSID[] = "Max sareeroop";          // CHANGE TO YOUR WIFI SSID
 const char WIFI_PASSWORD[] = "Minimax999157";  // CHANGE TO YOUR WIFI PASSWORD
@@ -29,6 +31,9 @@ MQTTClient mqtt = MQTTClient(256);
 unsigned long lastPublishTime = 0;
 
 void setup() {
+  pinMode(RED_PIN, OUTPUT);
+  pinMode(GREEN_PIN, OUTPUT);
+  pinMode(BLUE_PIN, OUTPUT);
   Serial.begin(9600);
   int status = WL_IDLE_STATUS;
   while (status != WL_CONNECTED) {
@@ -90,24 +95,21 @@ void sendToMQTT() {
 
   // int val = millis();
   //int val = analogRead(A0);
-  int sensorValue = analogRead(A0); // อ่านค่าเซนเซอร์
-  float voltage = sensorValue * (5.0 / 1023.0); // แปลงค่า Analog เป็น Voltage
-  float temperatureC = voltage * 100;
-  // int potValue = analogRead(potPin);
-  String val_str = String(temparatureC);
+  // int sensorValue = analogRead(A0); // อ่านค่าเซนเซอร์
+  // float voltage = sensorValue * (5.0 / 1023.0); // แปลงค่า Analog เป็น Voltage
+  // float temperatureC = voltage * 100;
+  // // int potValue = analogRead(potPin);
+  // String val_str = String(temparatureC);
 
   // Convert the string to a char array for MQTT publishing
-  char messageBuffer[10];
-  val_str.toCharArray(messageBuffer, 10);
-
- 
-
-  // Publish the message to the MQTT topic
-  mqtt.publish(PUBLISH_TOPIC, messageBuffer);
+  // char messageBuffer[10];
+  // val_str.toCharArray(messageBuffer, 10);
+  // // Publish the message to the MQTT topic
+  // mqtt.publish(PUBLISH_TOPIC, messageBuffer);
   
 
-  // Print debug information to the Serial Monitor in one line
-  Serial.println("Arduino UNO R4 - sent to MQTT: topic: " + String(PUBLISH_TOPIC) + " | payload: " + String(messageBuffer));
+  // // Print debug information to the Serial Monitor in one line
+  // Serial.println("Arduino UNO R4 - sent to MQTT: topic: " + String(PUBLISH_TOPIC) + " | payload: " + String(messageBuffer));
 }
 
 // void sendToMQTT() {
@@ -130,6 +132,26 @@ void sendToMQTT() {
 
 void messageHandler(String &topic, String &payload) {
   Serial.println("Arduino UNO R4 - received from MQTT: topic: " + topic + " | payload: " + payload);
+  int val = payload.toInt();
+
+
+  if(val >= 36 && val <= 50){
+    digitalWrite(RED_PIN, HIGH);
+    digitalWrite(BLUE_PIN, LOW);
+    digitalWrite(GREEN_PIN, LOW);
+  }
+  else if(val >= 26 && val <= 35){
+    digitalWrite(RED_PIN, LOW);
+    digitalWrite(BLUE_PIN, HIGH);
+    digitalWrite(GREEN_PIN, LOW);
+  }
+  else if(val >= 10 && val <= 25){
+    digitalWrite(RED_PIN, LOW);
+    digitalWrite(BLUE_PIN, LOW);
+    digitalWrite(GREEN_PIN, HIGH);
+  }
+  // analogWrite(9, val);
+  
 
   // You can process the incoming data , then control something
   /*
