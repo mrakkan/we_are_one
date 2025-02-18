@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab9-2</title>
+</head>
+
+<body>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1, h2{
+            display: flex;
+            justify-content: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            color: #f9f9f9;
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #201d1d;
+            border-radius: 10px;
+            background-color: #242121;
+        }
+
+        input{
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .sign{
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <div class="content">
+        <h2>username: mrakkan, password: 1234, email: mrakkan@gmail.com</h4>
+        <h1>Login</h1>
+        <form action="/process_signin" method="GET">
+            Username or Gmail : <input type="text" name="username">
+            Password : <input type="password" name="password">
+            <input type="submit" class="sign" value="Sign-in">
+        </form>
+        
+    </div>
+
+</body>
+
+</html>
+

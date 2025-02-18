@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab9-3</title>
+
+    <script src="http://webdev.it.kmitl.ac.th/lab/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://webdev.it.kmitl.ac.th/lab/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">list of songs</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Songs</th>
+                        <th>Artist</th>
+                        <th>Released</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function show(data){
+            let tbody = document.getElementById('tbody');
+            tbody.innerHTML = "";
+            for (let i of data){
+                let tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${i.song_name}</td>
+                    <td>${i.artist_name}</td>
+                    <td>${i.song_release_date.substring(0, 4)}</td>
+                    <td>${i.song_type}</td>
+                `;
+                tbody.appendChild(tr);
+            }
+        }
+
+        fetch("http://localhost:3000/api/datagetinfo")
+            .then(response => response.json())
+            .then(data => show(data))
+            .catch(error => console.error("Error fetching data:", error));
+    </script>
+</body>
+
+</html>

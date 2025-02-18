@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab10-1</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+    }
+    h1{
+        font-size: 5vh;
+    }
+</style>
+<body>
+    <div>
+    <h1>User Detail</h1>
+    <p>ID: <%= data.id %></p>
+    <p>First Name: <%= data.first_name %></p>
+    <p>Last Name: <%= data.last_name %></p>
+    <p>Username: <%= data.username %></p>
+    <p>Email: <%= data.email %></p>
+    <a href="/">Back to User List</a>
+</div>
+
+</body>
+
+</html>

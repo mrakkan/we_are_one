@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab10-2</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Questions</h1>
+        <% questions.forEach((question) => { %>
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title"><%= question.Stem %></h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question<%= question.QID %>" id="q<%= question.QID %>A" value="A">
+                        <label class="form-check-label" for="q<%= question.QID %>A">
+                            <%= question.Alt_A %>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question<%= question.QID %>" id="q<%= question.QID %>B" value="B">
+                        <label class="form-check-label" for="q<%= question.QID %>B">
+                            <%= question.Alt_B %>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question<%= question.QID %>" id="q<%= question.QID %>C" value="C">
+                        <label class="form-check-label" for="q<%= question.QID %>C">
+                            <%= question.Alt_C %>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="question<%= question.QID %>" id="q<%= question.QID %>D" value="D">
+                        <label class="form-check-label" for="q<%= question.QID %>D">
+                            <%= question.Alt_D %>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>
